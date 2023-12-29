@@ -18,7 +18,7 @@ pipeline {
         stage('Sonarqube scan') {
             steps {
                 withSonarQubeEnv('sonarQube') {
-                    sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=asiamahy2g_geolocation -Dsonar.organization=asiamahy2g'
+                    sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=asiamahy2g_geolocation'
                 }
             }
         }
