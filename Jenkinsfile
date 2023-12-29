@@ -13,6 +13,15 @@ pipeline {
             steps{
                 git branch: 'main', url: 'https://github.com/asiamahy2g/maven-code.git'
             }
+        
+        stage('Sonarqube scan'){
+          steps{
+            withSonarQubeEnv('sonarQube') {
+              sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=asiamahy2g_geolocation'
+            }
+          }
+
+        }
         }
         stage('Code Build') {
             steps {
