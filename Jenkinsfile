@@ -13,6 +13,7 @@ pipeline {
             steps{
                 git branch: 'main', url: 'https://github.com/asiamahy2g/maven-code.git'
             }
+        }
         
         stage('Sonarqube scan'){
           steps{
